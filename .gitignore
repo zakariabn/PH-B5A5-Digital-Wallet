@@ -2,7 +2,7 @@
 node_modules
 
 #planing
-planing/*
+z.planing/*
 
 #env
 .env.*
