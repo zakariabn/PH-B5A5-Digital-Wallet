@@ -1,0 +1,8 @@
+#node modules
+node_modules
+
+#planing
+planing/*
+
+#env
+.env.*
