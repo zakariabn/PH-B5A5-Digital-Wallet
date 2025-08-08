@@ -3,8 +3,8 @@ import { IWallet } from './wallet.types';
 
 const walletSchema = new Schema<IWallet>(
   {
-    balance: { type: Number, default: 50 },
-    isBlocked: { type: Boolean, default: false },
+    balance: { type: Number, default: 0 },
+    isFrozen: { type: Boolean, default: false },
   },
   { timestamps: true }
 );
