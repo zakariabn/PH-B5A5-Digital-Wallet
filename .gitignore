@@ -5,4 +5,5 @@ node_modules
 z.planing/*
 
 #env
+.env
 .env.*
