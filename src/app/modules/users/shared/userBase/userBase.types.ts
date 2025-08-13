@@ -41,6 +41,7 @@ export interface IUserJwtPayload {
 	_id: Types.ObjectId;
 	phone: string;
 	role: Role;
+	status: Status;
 	wallet?: Types.ObjectId;
 	permissionLevel?: number;
 }

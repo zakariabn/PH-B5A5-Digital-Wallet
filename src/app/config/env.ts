@@ -8,11 +8,11 @@ dotenv.config();
 
 // Define schema to validate env vars
 const envSchema = z.object({
-	NODE_ENV: z
-		.enum(['development', 'production', 'test'])
-		.default('development'),
+	NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
 	PORT: z.coerce.number().default(5000),
 	MONGO_URI: z.string().url(),
+
+	FRONTEND_URL: z.string(),
 
 	JWT_ACCESS_SECRET: z.string(),
 	JWT_ACCESS_EXPIRES: z.string(),
@@ -31,10 +31,7 @@ const envSchema = z.object({
 const parsedEnv = envSchema.safeParse(process.env);
 
 if (!parsedEnv.success) {
-	console.error(
-		'❌ Invalid environment variables:',
-		parsedEnv.error.flatten().fieldErrors
-	);
+	console.error('❌ Invalid environment variables:', parsedEnv.error.flatten().fieldErrors);
 	process.exit(1);
 }
 

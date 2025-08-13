@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AgentRouter = void 0;
+const express_1 = require("express");
+const validateRequest_1 = require("../../../middleware/validateRequest");
+const userBase_validate_1 = require("../shared/userBase/userBase.validate");
+const agent_controller_1 = require("./agent.controller");
+const checkAuth_1 = require("../../../middleware/checkAuth");
+const userBase_types_1 = require("../shared/userBase/userBase.types");
+const router = (0, express_1.Router)();
+router.post('/register', (0, validateRequest_1.validateRequest)(userBase_validate_1.userBaseZodSchema), agent_controller_1.AgentUserController.createAgentUser);
+router.get('/commissions', (0, checkAuth_1.checkAuth)(userBase_types_1.Role.AGENT), agent_controller_1.AgentUserController.viewCommission);
+exports.AgentRouter = router;

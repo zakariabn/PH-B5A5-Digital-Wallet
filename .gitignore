@@ -7,3 +7,4 @@ z.planing/*
 #env
 .env
 .env.*
+.vercel

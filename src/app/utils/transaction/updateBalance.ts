@@ -3,12 +3,7 @@ import { Wallet } from '../../modules/wallet/wallet.model';
 import { SystemAccount } from '../../modules/systemAccount/systemAccount.model';
 import AppError from '../../helpers/AppError';
 
-export const updateWalletBalance = async (
-	walletId: Types.ObjectId,
-	amount: number,
-	type: 'add' | 'remove',
-	session: ClientSession
-) => {
+export const updateWalletBalance = async (walletId: Types.ObjectId, amount: number, type: 'add' | 'remove', session: ClientSession) => {
 	const updatedSenderWallet = await Wallet.findByIdAndUpdate(
 		{ _id: walletId },
 		{ $inc: { balance: type === 'add' ? amount : -amount } },
@@ -21,11 +16,7 @@ export const updateWalletBalance = async (
 	return updatedSenderWallet;
 };
 
-export const updateSystemAccountBalance = async (
-	amount: number,
-	type: 'add' | 'remove',
-	session: ClientSession
-): Promise<void> => {
+export const updateSystemAccountBalance = async (amount: number, type: 'add' | 'remove', session: ClientSession): Promise<void> => {
 	// Fetch the system account
 	const systemAccount = await SystemAccount.findOne();
 	if (!systemAccount) {

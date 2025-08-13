@@ -23,5 +23,5 @@ export const updateWalletStatusZodSchema = z.object({
 });
 
 export const viewUsersQueryZodSchema = z.object({
-	view: z.enum(['all', 'admin', 'agent', 'personal']),
+	view: z.enum(['all', 'admin', 'agent', 'personal']).optional(),
 });

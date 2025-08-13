@@ -13,19 +13,16 @@ const commonTransactionFieldsZodSchema = z.object(commonTransactionFieldsShape);
 export const sendMonyZodSchema = z.object({
 	...commonTransactionFieldsShape,
 	type: z.literal(TransactionType.SEND, 'Transaction type is required'),
-	amount: z.number().positive('Amount must be a positive number'),
 });
 
 export const cashOutZodSchema = z.object({
 	...commonTransactionFieldsShape,
 	type: z.literal(TransactionType.CASH_OUT, 'Transaction type is required'),
-	amount: z.number().positive('Amount must be a positive number'),
 });
 
 export const cashInZodSchema = z.object({
 	...commonTransactionFieldsShape,
 	type: z.literal(TransactionType.CASH_IN, 'Transaction type is required'),
-	amount: z.number().positive('Amount must be a positive number'),
 });
 
 export const topUpZodSchema = commonTransactionFieldsZodSchema

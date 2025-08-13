@@ -3,7 +3,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { env } from '../config/env';
 import httpStatus from 'http-status-codes';
-import { handlerZodError } from '../helpers/errorHerpers/handlerZodError';
+import { handlerZodError } from '../helpers/errorHelpers/handlerZodError';
 import { TErrorSources } from '../interfaces/error.types';
 import AppError from '../helpers/AppError';
 

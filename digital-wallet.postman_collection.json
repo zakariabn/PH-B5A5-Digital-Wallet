@@ -1,0 +1,583 @@
+{
+	"info": {
+		"_postman_id": "a4c0024b-7bed-44bc-90bb-d320d90567b1",
+		"name": "Digital-wallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20658331"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\" : \"AGENT\",\r\n    \"phone\" : \"01922362154\",\r\n    \"password\" : \"A@123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Personal",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Zakaria BN\",\r\n    \"phone\" : \"01756415098\",\r\n    \"password\" : \"A@123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/v1/user/personal/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"personal",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Transactions",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODk0NmE0ZDk4Y2ZhZmM0ZTAzNDU3ZDEiLCJwaG9uZSI6IjAxNzU2NDE1MDk4Iiwicm9sZSI6IlBFUlNPTkFMIiwic3RhdHVzIjoiQUNUSVZFIiwid2FsbGV0IjoiNjg5NDZhNGQ5OGNmYWZjNGUwMzQ1N2NmIiwiaWF0IjoxNzU0Njc3MzI0LCJleHAiOjE3NTQ3NjM3MjR9.Fsn-eGHNDqIk-Asi6Zk1LSahN2M_saeX7fE7ZNFh8pA",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/api/v1/user/personal/transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"personal",
+										"transactions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Check Balance",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODk0NmE0ZDk4Y2ZhZmM0ZTAzNDU3ZDEiLCJwaG9uZSI6IjAxNzU2NDE1MDk4Iiwicm9sZSI6IlBFUlNPTkFMIiwic3RhdHVzIjoiQUNUSVZFIiwid2FsbGV0IjoiNjg5NDZhNGQ5OGNmYWZjNGUwMzQ1N2NmIiwiaWF0IjoxNzU0Njc3MzI0LCJleHAiOjE3NTQ3NjM3MjR9.Fsn-eGHNDqIk-Asi6Zk1LSahN2M_saeX7fE7ZNFh8pA",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/api/v1/user/personal/balance",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"personal",
+										"balance"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Agent",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"test agent name 2\",\r\n    \"phone\" : \"01922362154\",\r\n    \"password\" : \"A@123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/v1/user/agent/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"agent",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Commission",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODkyMmU3ZDU5NDAxNDUyNjE0ODY0MWYiLCJwaG9uZSI6IjAxOTIyMzYyMTU0Iiwicm9sZSI6IkFHRU5UIiwid2FsbGV0IjoiNjg5MjJlN2Q1OTQwMTQ1MjYxNDg2NDFiIiwiaWF0IjoxNzU0NTY1OTkxLCJleHAiOjE3NTQ2NTIzOTF9.iE4COnVTCHSUNiYjplqLg9pfgYzO1vGIKO65sLKse10",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/api/v1/user/agent/commissions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"agent",
+										"commissions"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "Approve Agent",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODkzMDcwMTAyZmNmYTM3MGVmZjIzMzAiLCJwaG9uZSI6IjAxNzAwMDAwMDAwIiwicm9sZSI6IkFETUlOIiwicGVybWlzc2lvbkxldmVsIjoyLCJpYXQiOjE3NTQ1NzYxMDksImV4cCI6MTc1NDY2MjUwOX0.jdxbhrCYz0JwoWBP-4E8npwLZ7vkdmP5QlfRUtMc7lU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"agentId\" : \"68922c03980dab723068f6d6\",\r\n    \"isApproved\" : false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/v1/user/admin/manage-agent",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"admin",
+										"manage-agent"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Wallet Status",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODkzMDcwMTAyZmNmYTM3MGVmZjIzMzAiLCJwaG9uZSI6IjAxNzAwMDAwMDAwIiwicm9sZSI6IkFETUlOIiwicGVybWlzc2lvbkxldmVsIjoyLCJpYXQiOjE3NTQ1NzYxMDksImV4cCI6MTc1NDY2MjUwOX0.jdxbhrCYz0JwoWBP-4E8npwLZ7vkdmP5QlfRUtMc7lU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"walletId\" : \"68922c03980dab723068f6d2\",\r\n    \"isFrozen\" : false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/v1/user/admin/update-wallet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"admin",
+										"update-wallet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODkzMDcwMTAyZmNmYTM3MGVmZjIzMzAiLCJwaG9uZSI6IjAxNzAwMDAwMDAwIiwicm9sZSI6IkFETUlOIiwicGVybWlzc2lvbkxldmVsIjoyLCJpYXQiOjE3NTQ1NzYxMDksImV4cCI6MTc1NDY2MjUwOX0.jdxbhrCYz0JwoWBP-4E8npwLZ7vkdmP5QlfRUtMc7lU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Test Admin\",\r\n    \"phone\" : \"01900000000\",\r\n    \"password\" : \"A@123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/v1/user/admin/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"admin",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Users",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODkzMDcwMTAyZmNmYTM3MGVmZjIzMzAiLCJwaG9uZSI6IjAxNzAwMDAwMDAwIiwicm9sZSI6IkFETUlOIiwicGVybWlzc2lvbkxldmVsIjoyLCJpYXQiOjE3NTQ2NzAzOTQsImV4cCI6MTc1NDc1Njc5NH0.7MBkamPfCW8KyCieHnQvFkp-FZSg8EbsSabTdLSrzqc",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/api/v1/user/admin/get-users?view=all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"admin",
+										"get-users"
+									],
+									"query": [
+										{
+											"key": "view",
+											"value": "all"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Transactions",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODkzMDcwMTAyZmNmYTM3MGVmZjIzMzAiLCJwaG9uZSI6IjAxNzAwMDAwMDAwIiwicm9sZSI6IkFETUlOIiwicGVybWlzc2lvbkxldmVsIjoyLCJpYXQiOjE3NTQ2NzAzOTQsImV4cCI6MTc1NDc1Njc5NH0.7MBkamPfCW8KyCieHnQvFkp-FZSg8EbsSabTdLSrzqc",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/api/v1/user/admin/get-transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"admin",
+										"get-transactions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Wallets",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODkzMDcwMTAyZmNmYTM3MGVmZjIzMzAiLCJwaG9uZSI6IjAxNzAwMDAwMDAwIiwicm9sZSI6IkFETUlOIiwicGVybWlzc2lvbkxldmVsIjoyLCJpYXQiOjE3NTQ2NzAzOTQsImV4cCI6MTc1NDc1Njc5NH0.7MBkamPfCW8KyCieHnQvFkp-FZSg8EbsSabTdLSrzqc",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/api/v1/user/admin/get-wallets",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"admin",
+										"get-wallets"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Send Money",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODk0NmE0ZDk4Y2ZhZmM0ZTAzNDU3ZDEiLCJwaG9uZSI6IjAxNzU2NDE1MDk4Iiwicm9sZSI6IlBFUlNPTkFMIiwic3RhdHVzIjoiQUNUSVZFIiwid2FsbGV0IjoiNjg5NDZhNGQ5OGNmYWZjNGUwMzQ1N2NmIiwiaWF0IjoxNzU0Njc3MzI0LCJleHAiOjE3NTQ3NjM3MjR9.Fsn-eGHNDqIk-Asi6Zk1LSahN2M_saeX7fE7ZNFh8pA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"senderWalletId\": \"68946a4d98cfafc4e03457cf\",\r\n    \"receiverWalletId\" : \"688af8e220177e4eeefb6f88\",\r\n    \"amount\" : 20,\r\n    \"type\": \"SEND\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/transaction/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"transaction",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cash In",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODkyMmU3ZDU5NDAxNDUyNjE0ODY0MWYiLCJwaG9uZSI6IjAxOTIyMzYyMTU0Iiwicm9sZSI6IkFHRU5UIiwic3RhdHVzIjoiQUNUSVZFIiwid2FsbGV0IjoiNjg5MjJlN2Q1OTQwMTQ1MjYxNDg2NDFiIiwiaWF0IjoxNzU0Njc4ODkxLCJleHAiOjE3NTQ3NjUyOTF9.3ezOMsc23LG7DAXyLl_Uw_Sw1n8Pg6ILmrdd4syKviM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"senderWalletId\": \"68922e7d594014526148641b\",\r\n    \"receiverWalletId\" : \"68946a4d98cfafc4e03457cf\",\r\n    \"amount\" : 500,\r\n    \"type\": \"CASH_IN\",\r\n    \"senderRole\" : \"AGENT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/transaction/cash-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"transaction",
+								"cash-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cash Out",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODk0NmE0ZDk4Y2ZhZmM0ZTAzNDU3ZDEiLCJwaG9uZSI6IjAxNzU2NDE1MDk4Iiwicm9sZSI6IlBFUlNPTkFMIiwic3RhdHVzIjoiQUNUSVZFIiwid2FsbGV0IjoiNjg5NDZhNGQ5OGNmYWZjNGUwMzQ1N2NmIiwiaWF0IjoxNzU0Njc3MzI0LCJleHAiOjE3NTQ3NjM3MjR9.Fsn-eGHNDqIk-Asi6Zk1LSahN2M_saeX7fE7ZNFh8pA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"senderWalletId\": \"68946a4d98cfafc4e03457cf\",\r\n    \"receiverWalletId\" : \"68922c03980dab723068f6d2\",\r\n    \"amount\" : 500,\r\n    \"type\": \"CASH_OUT\",\r\n    \"senderRole\" : \"PERSONAL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/transaction/cash-out",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"transaction",
+								"cash-out"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Top Up",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODk0NmE0ZDk4Y2ZhZmM0ZTAzNDU3ZDEiLCJwaG9uZSI6IjAxNzU2NDE1MDk4Iiwicm9sZSI6IlBFUlNPTkFMIiwic3RhdHVzIjoiQUNUSVZFIiwid2FsbGV0IjoiNjg5NDZhNGQ5OGNmYWZjNGUwMzQ1N2NmIiwiaWF0IjoxNzU0Njc3MzI0LCJleHAiOjE3NTQ3NjM3MjR9.Fsn-eGHNDqIk-Asi6Zk1LSahN2M_saeX7fE7ZNFh8pA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"senderWalletId\": \"68946a4d98cfafc4e03457cf\",\r\n    \"rechargeNumber\" : \"01756415098\",\r\n    \"amount\" : 10,\r\n    \"type\": \"TOP_UP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/transaction/top-up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"transaction",
+								"top-up"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -14,7 +14,6 @@ const handleSendMoney = async (payload: ITransaction) => {
 	const { sender, senderWallet, receiverWallet, chargeAmount, totalAmount } = await validateTransaction(payload);
 
 	const session = await mongoose.startSession();
-
 	try {
 		session.startTransaction();
 
@@ -112,8 +111,7 @@ const handleCashIn = async (payload: ITransaction) => {
 
 const handleCashOut = async (payload: ITransaction) => {
 	const { amount, type } = payload;
-	const { sender, senderWallet, receiver, receiverWallet, chargeAmount, commissionAmount, totalAmount } =
-		await validateTransaction(payload);
+	const { sender, senderWallet, receiver, receiverWallet, chargeAmount, commissionAmount, totalAmount } = await validateTransaction(payload);
 
 	// spiting commission between system and agent
 	const systemCommission = chargeAmount - commissionAmount;
@@ -123,16 +121,8 @@ const handleCashOut = async (payload: ITransaction) => {
 		session.startTransaction();
 
 		// Update balances
-		const updatedSenderWallet = await Wallet.findByIdAndUpdate(
-			senderWallet._id,
-			{ $inc: { balance: -totalAmount } },
-			{ new: true, session }
-		);
-		const updatedReceiverWallet = await Wallet.findByIdAndUpdate(
-			receiverWallet._id,
-			{ $inc: { balance: amount } },
-			{ new: true, session }
-		);
+		const updatedSenderWallet = await Wallet.findByIdAndUpdate(senderWallet._id, { $inc: { balance: -totalAmount } }, { new: true, session });
+		const updatedReceiverWallet = await Wallet.findByIdAndUpdate(receiverWallet._id, { $inc: { balance: amount } }, { new: true, session });
 
 		// Create transaction record
 		const transaction = await new Transaction({
